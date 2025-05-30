@@ -7,100 +7,103 @@
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
     
     body {
       font-family: 'Alef', sans-serif;
-      margin: 0;
-      padding: 0;
       background: #f0f2f5;
       color: #333;
       direction: rtl;
+      text-align: right;
     }
     
     .container {
+      width: 100%;
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
       padding: 20px;
+    }
+    
+    .banner {
+      width: 100%;
+      margin-bottom: 30px;
     }
     
     .banner img {
       width: 100%;
+      height: auto;
+      display: block;
       border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      margin-bottom: 20px;
     }
     
     h2 {
       color: #007b8f;
-      margin: 40px 0 30px 0;
       text-align: center;
-      font-size: 2rem;
+      margin: 40px 0 30px 0;
+      font-size: 32px;
       font-weight: 700;
     }
     
     .program {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      width: 100%;
       margin-bottom: 40px;
     }
     
     .event {
-      display: flex;
+      width: 100%;
+      display: table;
+      margin-bottom: 15px;
       background: white;
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
     }
     
     .event:hover {
-      transform: translateY(-2px);
       box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     }
     
-    .event .time-card {
+    .time-card {
+      display: table-cell;
+      width: 180px;
       background: #007b8f;
       color: white;
-      padding: 25px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-      min-width: 180px;
+      padding: 25px 20px;
       text-align: center;
+      vertical-align: middle;
+      font-weight: 700;
+      font-size: 18px;
     }
     
-    .event .desc-card {
-      flex: 1;
+    .desc-card {
+      display: table-cell;
       padding: 25px 30px;
-      display: flex;
-      align-items: center;
-      font-size: 1.05rem;
+      vertical-align: middle;
+      font-size: 17px;
       color: #4a4a4a;
       background: #fafbfc;
     }
     
     .links {
-      margin: 50px 0;
       text-align: center;
+      margin: 50px 0;
     }
     
     .links a {
       display: inline-block;
-      margin: 10px;
       padding: 14px 32px;
       background: #007b8f;
       color: white;
       text-decoration: none;
       border-radius: 30px;
       font-weight: 500;
-      font-size: 1.1rem;
-      transition: all 0.3s;
+      font-size: 18px;
       box-shadow: 0 4px 12px rgba(0,123,143,0.3);
+      transition: all 0.3s ease;
     }
     
     .links a:hover {
@@ -110,58 +113,67 @@
     }
     
     .projects-image {
+      width: 100%;
       margin-top: 40px;
     }
     
-    .projects-image picture,
     .projects-image img {
-      display: block;
       width: 100%;
+      height: auto;
+      display: block;
       border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     }
     
-    /* עיצוב מותאם למובייל */
+    /* עיצוב למובייל */
     @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+      
       h2 {
-        font-size: 1.6rem;
+        font-size: 26px;
       }
       
       .event {
-        flex-direction: column;
+        display: block;
       }
       
-      .event .time-card {
-        min-width: unset;
-        padding: 20px;
-        font-size: 1rem;
+      .time-card,
+      .desc-card {
+        display: block;
+        width: 100%;
       }
       
-      .event .desc-card {
+      .time-card {
         padding: 20px;
-        font-size: 0.95rem;
+        font-size: 16px;
+      }
+      
+      .desc-card {
+        padding: 20px;
+        font-size: 15px;
         background: white;
       }
       
       .links a {
         padding: 12px 24px;
-        font-size: 1rem;
-      }
-      
-      .container {
-        padding: 15px;
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- באנר ראשי -->
     <div class="banner">
       <img src="conference_announcement_optimized.jpg" alt="הכרזה על כנס הפרויקטים">
     </div>
     
+    <!-- כותרת -->
     <h2>תכנית הכנס</h2>
     
+    <!-- תכנית הכנס -->
     <div class="program">
       <div class="event">
         <div class="time-card">08:15–12:15</div>
@@ -184,10 +196,12 @@
       </div>
     </div>
     
+    <!-- קישור לתכנית המלאה -->
     <div class="links">
       <a href="https://docs.google.com/spreadsheets/d/14V-y-1d_JJVFAeXVI2TL8Yd6pgADAutpAwZlSIHPCD0/edit?usp=sharing" target="_blank">צפייה בתכנית המלאה</a>
     </div>
     
+    <!-- תמונת הפרויקטים -->
     <div class="projects-image">
       <picture>
         <source srcset="project_list_full_web_optimized.webp" type="image/webp">
