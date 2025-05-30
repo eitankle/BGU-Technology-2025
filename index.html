@@ -42,24 +42,22 @@
 
     .event {
       display: flex;
-      flex-direction: row-reverse;
       justify-content: space-between;
       gap: 20px;
-      width: 100%;
       flex-wrap: wrap;
     }
 
-    .event-card {
+    .event .time-card,
+    .event .desc-card {
       flex: 1 1 45%;
-      min-width: 250px;
       background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 20px;
+      box-sizing: border-box;
     }
 
-    .event-card.time {
-      background: #eaf4f6;
+    .event .time-card {
       text-align: center;
       font-weight: bold;
       color: #007b8f;
@@ -96,11 +94,13 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .event {
         flex-direction: column;
       }
-      .event-card {
+
+      .event .time-card,
+      .event .desc-card {
         width: 100%;
       }
     }
@@ -115,20 +115,20 @@
     <h2>תכנית הכנס</h2>
     <div class="program">
       <div class="event">
-        <div class="event-card time">08:15–12:15</div>
-        <div class="event-card">27 מושבים מקבילים של מצגות פרויקטים</div>
+        <div class="time-card">08:15–12:15</div>
+        <div class="desc-card">27 מושבים מקבילים של מצגות פרויקטים</div>
       </div>
       <div class="event">
-        <div class="event-card time">12:15–13:00</div>
-        <div class="event-card">תצוגת פוסטרים</div>
+        <div class="time-card">12:15–13:00</div>
+        <div class="desc-card">תצוגת פוסטרים</div>
       </div>
       <div class="event">
-        <div class="event-card time">13:00–14:00</div>
-        <div class="event-card">ארוחת צהריים</div>
+        <div class="time-card">13:00–14:00</div>
+        <div class="desc-card">ארוחת צהריים</div>
       </div>
       <div class="event">
-        <div class="event-card time">14:00–15:00</div>
-        <div class="event-card">כנס מצטיינים וסיום שנה</div>
+        <div class="time-card">14:00–15:00</div>
+        <div class="desc-card">כנס מצטיינים וסיום שנה</div>
       </div>
     </div>
 
