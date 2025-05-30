@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>כנס פרויקטים 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Preload התמונה הראשית -->
+  <link rel="preload" as="image" href="conference_announcement_optimized.jpg">
   <style>
     * {
       margin: 0;
@@ -167,7 +170,10 @@
   <div class="container">
     <!-- באנר ראשי -->
     <div class="banner">
-      <img src="conference_announcement_optimized.jpg" alt="הכרזה על כנס הפרויקטים">
+      <picture>
+        <source srcset="conference_announcement_optimized.webp" type="image/webp">
+        <img src="conference_announcement_optimized.jpg" alt="הכרזה על כנס הפרויקטים" fetchpriority="high">
+      </picture>
     </div>
     
     <!-- כותרת -->
@@ -205,9 +211,26 @@
     <div class="projects-image">
       <picture>
         <source srcset="project_list_full_web_optimized.webp" type="image/webp">
-        <img src="project_list_full_web_optimized.jpg" alt="רשימת פרויקטים">
+        <img src="project_list_full_web_optimized.jpg" alt="רשימת פרויקטים" loading="lazy">
       </picture>
     </div>
   </div>
+  
+  <script>
+    // טיפול בטעינת התמונה הראשית
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.querySelector('.banner');
+      const bannerImg = banner.querySelector('img');
+      
+      // כשהתמונה נטענת, הסר את האנימציה
+      if (bannerImg.complete) {
+        banner.classList.add('loaded');
+      } else {
+        bannerImg.addEventListener('load', function() {
+          banner.classList.add('loaded');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
