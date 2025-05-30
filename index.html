@@ -4,104 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>כנס פרויקטים 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Alef&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
       font-family: 'Alef', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #f0f2f5;
       color: #333;
       direction: rtl;
     }
-
+    
     .container {
       max-width: 900px;
       margin: auto;
       padding: 20px;
     }
-
+    
     .banner img {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
     }
-
+    
     h2 {
       color: #007b8f;
-      margin-top: 40px;
+      margin: 40px 0 30px 0;
       text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
     }
-
+    
     .program {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      margin-top: 20px;
+      gap: 15px;
+      margin-bottom: 40px;
     }
-
+    
     .event {
       display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .event .time-card,
-    .event .desc-card {
-      flex: 1 1 45%;
       background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-
+    
+    .event:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    
     .event .time-card {
+      background: #007b8f;
+      color: white;
+      padding: 25px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      min-width: 180px;
       text-align: center;
-      font-weight: bold;
-      color: #007b8f;
     }
-
+    
+    .event .desc-card {
+      flex: 1;
+      padding: 25px 30px;
+      display: flex;
+      align-items: center;
+      font-size: 1.05rem;
+      color: #4a4a4a;
+      background: #fafbfc;
+    }
+    
     .links {
-      margin-top: 40px;
+      margin: 50px 0;
       text-align: center;
     }
-
+    
     .links a {
       display: inline-block;
       margin: 10px;
-      padding: 10px 20px;
+      padding: 14px 32px;
       background: #007b8f;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,123,143,0.3);
     }
-
+    
     .links a:hover {
       background: #005f6a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,123,143,0.4);
     }
-
+    
     .projects-image {
       margin-top: 40px;
     }
-
+    
     .projects-image picture,
     .projects-image img {
       display: block;
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     }
-
-    @media (max-width: 700px) {
+    
+    /* עיצוב מותאם למובייל */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.6rem;
+      }
+      
       .event {
         flex-direction: column;
       }
-
-      .event .time-card,
+      
+      .event .time-card {
+        min-width: unset;
+        padding: 20px;
+        font-size: 1rem;
+      }
+      
       .event .desc-card {
-        width: 100%;
+        padding: 20px;
+        font-size: 0.95rem;
+        background: white;
+      }
+      
+      .links a {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+      
+      .container {
+        padding: 15px;
       }
     }
   </style>
@@ -111,31 +159,35 @@
     <div class="banner">
       <img src="conference_announcement_optimized.jpg" alt="הכרזה על כנס הפרויקטים">
     </div>
-
+    
     <h2>תכנית הכנס</h2>
+    
     <div class="program">
       <div class="event">
         <div class="time-card">08:15–12:15</div>
         <div class="desc-card">27 מושבים מקבילים של מצגות פרויקטים</div>
       </div>
+      
       <div class="event">
         <div class="time-card">12:15–13:00</div>
         <div class="desc-card">תצוגת פוסטרים</div>
       </div>
+      
       <div class="event">
         <div class="time-card">13:00–14:00</div>
         <div class="desc-card">ארוחת צהריים</div>
       </div>
+      
       <div class="event">
         <div class="time-card">14:00–15:00</div>
         <div class="desc-card">כנס מצטיינים וסיום שנה</div>
       </div>
     </div>
-
+    
     <div class="links">
-      <a href="https://docs.google.com/spreadsheets/d/14V-y-1d_JJVFAeXVI2TL8Yd6pgADAutpAwZlSIHPCD0/edit?usp=sharing" target="_blank">צפייה בתכניה</a>
+      <a href="https://docs.google.com/spreadsheets/d/14V-y-1d_JJVFAeXVI2TL8Yd6pgADAutpAwZlSIHPCD0/edit?usp=sharing" target="_blank">צפייה בתכנית המלאה</a>
     </div>
-
+    
     <div class="projects-image">
       <picture>
         <source srcset="project_list_full_web_optimized.webp" type="image/webp">
