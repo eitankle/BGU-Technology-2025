@@ -65,12 +65,22 @@
     .links a:hover {
       background: #005f6a;
     }
+    .projects-image {
+      margin-top: 60px;
+      text-align: center;
+    }
+    .projects-image picture, .projects-image img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="banner">
-      <img src="conference_announcement_optimized.jpg" alt="הכרזה על כנס הפרויקטים">
+      <img src="conference_announcement.png" alt="הכרזה על כנס הפרויקטים">
     </div>
 
     <h2>תכנית הכנס</h2>
@@ -98,9 +108,11 @@
     </div>
 
     <div class="projects-image">      
-      <img src="project_list_full_web_optimized.png" alt="רשימת פרויקטים">
+      <picture>
+        <source srcset="project_list_full_web_optimized.webp" type="image/webp">
+        <img src="project_list_full_web_optimized.jpg" alt="רשימת פרויקטים">
+      </picture>
     </div>
-    
   </div>
 </body>
 </html>
